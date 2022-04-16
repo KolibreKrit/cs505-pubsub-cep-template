@@ -27,30 +27,30 @@ public class Launcher {
     public static void main(String[] args) throws IOException {
 
 
-        System.out.println("Starting CEP...");
-
-        cepEngine = new CEPEngine();
-
-
-        //START MODIFY
-        inputStreamName = "PatientInStream";
-        String inputStreamAttributesString = "first_name string, last_name string, mrn string, zip_code string, patient_status_code string";
-
-        String outputStreamName = "PatientOutStream";
-        String outputStreamAttributesString = "patient_status_code string, count long";
-
-
-        String queryString = " " +
-                "from PatientInStream#window.timeBatch(5 sec) " +
-                "select patient_status_code, count() as count " +
-                "group by patient_status_code " +
-                "insert into PatientOutStream; ";
-
-        //END MODIFY
-
-        cepEngine.createCEP(inputStreamName, outputStreamName, inputStreamAttributesString, outputStreamAttributesString, queryString);
-
-        System.out.println("CEP Started...");
+//        System.out.println("Starting CEP...");
+//
+//        cepEngine = new CEPEngine();
+//
+//
+//        //START MODIFY
+//        inputStreamName = "PatientInStream";
+//        String inputStreamAttributesString = "first_name string, last_name string, mrn string, zip_code string, patient_status_code string";
+//
+//        String outputStreamName = "PatientOutStream";
+//        String outputStreamAttributesString = "patient_status_code string, count long";
+//
+//
+//        String queryString = " " +
+//                "from PatientInStream#window.timeBatch(5 sec) " +
+//                "select patient_status_code, count() as count " +
+//                "group by patient_status_code " +
+//                "insert into PatientOutStream; ";
+//
+//        //END MODIFY
+//
+//        cepEngine.createCEP(inputStreamName, outputStreamName, inputStreamAttributesString, outputStreamAttributesString, queryString);
+//
+//        System.out.println("CEP Started...");
 
 
 
