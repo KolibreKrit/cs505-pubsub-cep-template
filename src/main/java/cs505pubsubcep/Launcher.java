@@ -54,7 +54,7 @@ public class Launcher {
 
 
 
-        //starting pateint_data collector
+        //starting patient_data collector
         Map<String,String> message_config = new HashMap<>();
         message_config.put("hostname","128.163.202.50"); //Fill config for your team in
         message_config.put("username","student");
