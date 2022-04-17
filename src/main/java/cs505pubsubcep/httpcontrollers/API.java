@@ -114,5 +114,41 @@ public class API {
         return Response.ok(responseString).header("Access-Control-Allow-Origin", "*").build();
     }
 
+    @GET
+    @Path("/getteam")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAccessCount(@HeaderParam("X-Auth-API-Key") String authKey) {
+        String responseString = "{}";
+        try {
+
+            //get remote ip address from request
+            String remoteIP = request.get().getRemoteAddr();
+            //get the timestamp of the request
+            long access_ts = System.currentTimeMillis();
+            System.out.println("IP: " + remoteIP + " Timestamp: " + access_ts);
+
+            //generate event based on access
+            String inputEvent = gson.toJson(new accessRecord(remoteIP,access_ts));
+            System.out.println("inputEvent: " + inputEvent);
+
+            //send input event to CEP
+            Launcher.cepEngine.input(Launcher.inputStreamName, inputEvent);
+
+            //generate a response
+            Map<String,String> responseMap = new HashMap<>();
+            responseMap.put("accesscount",String.valueOf(Launcher.accessCount));
+            responseString = gson.toJson(responseMap);
+
+        } catch (Exception ex) {
+
+            StringWriter sw = new StringWriter();
+            ex.printStackTrace(new PrintWriter(sw));
+            String exceptionAsString = sw.toString();
+            ex.printStackTrace();
+
+            return Response.status(500).entity(exceptionAsString).build();
+        }
+        return Response.ok(responseString).header("Access-Control-Allow-Origin", "*").build();
+    }
 
 }
