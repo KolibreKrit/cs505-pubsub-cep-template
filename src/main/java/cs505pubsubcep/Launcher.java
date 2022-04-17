@@ -64,7 +64,7 @@ public class Launcher {
         message_config.put("hostname","localhost");
         message_config.put("username","guest");
         message_config.put("password","guest");
-        message_config.put("virtualhost","none");
+        message_config.put("virtualhost","/");
 
         topicConnector = new TopicConnector(message_config);
         topicConnector.connect();
