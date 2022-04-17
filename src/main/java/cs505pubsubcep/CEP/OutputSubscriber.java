@@ -1,5 +1,6 @@
 package cs505pubsubcep.CEP;
 
+import cs505pubsubcep.Launcher;
 import io.siddhi.core.util.transport.InMemoryBroker;
 
 public class OutputSubscriber implements InMemoryBroker.Subscriber {
