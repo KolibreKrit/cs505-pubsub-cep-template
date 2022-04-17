@@ -120,15 +120,7 @@ public class API {
     public Response getAccessCount(@HeaderParam("X-Auth-API-Key") String authKey) {
         String responseString = "{}";
         try {
-            responseString = "{\n" +
-                    "\n" +
-                    "  \"team_name\": \"Oceans\",\n" +
-                    "\n" +
-                    "  \"Team_members_sids\": [912222301], \n" +
-                    "\n" +
-                    "  \"app_status_code\": 0\n" +
-                    "\n" +
-                    "}"
+            responseString = "{\n" + "\n" + "  \"team_name\": \"Oceans\",\n" + "\n" + "  \"Team_members_sids\": [912222301], \n" + "\n" + "  \"app_status_code\": 0\n" + "\n" + "}";
         } catch (Exception ex) {
 
             StringWriter sw = new StringWriter();
