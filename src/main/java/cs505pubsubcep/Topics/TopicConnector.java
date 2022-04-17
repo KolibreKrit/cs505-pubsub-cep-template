@@ -17,7 +17,7 @@ import java.util.Map;
 public class TopicConnector {
 
     private Gson gson;
-    final Type typeOf = new TypeToken<List<Map<String,String>>>(){}.getType();\
+    final Type typeOf = new TypeToken<List<Map<String,String>>>(){}.getType();
     final Type typeListTestingData = new TypeToken<List<TestingData>>(){}.getType();
 
     //private String EXCHANGE_NAME = "patient_data";
