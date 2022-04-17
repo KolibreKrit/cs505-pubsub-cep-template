@@ -85,8 +85,8 @@ public class TopicConnector {
                     System.out.println("\tcontact_list = " + testingData.contact_list);
                     System.out.println("\tevent_list = " + testingData.event_list);
                 }
-//                List<Map<String,String>> incomingList = gson.fromJson(message, typeOf);
-                for(Map<String,String> map : incomingList) {
+                List<Map<String,String>> incomingCEP = gson.fromJson(message, typeOf);
+                for(Map<String,String> map : incomingCEP) {
                     System.out.println("INPUT CEP EVENT: " +  map);
                 Launcher.cepEngine.input(Launcher.inputStreamName, gson.toJson(map));
                 }
