@@ -90,6 +90,18 @@ public class TopicConnector {
 //                    System.out.println("INPUT CEP EVENT: " +  map);
 //                    Launcher.cepEngine.input(Launcher.inputStreamName, gson.toJson(map));
 //                }
+                for (TestingData testingData : incomingList) {
+                    Map<String, String> map = new HashMap<String, String>();
+                    map.put("testing_id", testingData.testing_id);
+                    map.put("patient_name", testingData.patient_name);
+                    map.put("patient_mrn", testingData.patient_mrn);
+                    map.put("patient_mrn", testingData.patient_zipcode);
+                    map.put("patient_mrn", testingData.patient_status);
+                    map.put("patient_mrn", testingData.contact_list);
+                    map.put("patient_mrn", testingData.event_list);
+                    System.out.println("INPUT CEP EVENT: " +  map);
+                    Launcher.cepEngine.input(Launcher.inputStreamName, gson.toJson(map));
+                }
                 System.out.println("");
                 System.out.println("");
 
