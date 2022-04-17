@@ -65,7 +65,7 @@ public class Launcher {
         topicConnector.connect();
 
         //Embedded HTTP initialization
-        startServer();
+//        startServer();
 
         try {
             while (true) {
