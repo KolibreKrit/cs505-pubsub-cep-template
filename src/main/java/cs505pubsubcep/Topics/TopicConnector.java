@@ -89,7 +89,7 @@ public class TopicConnector {
 //                for(Map<String,String> map : incomingCEP) {
 //                    System.out.println("INPUT CEP EVENT: " +  map);
 //                Launcher.cepEngine.input(Launcher.inputStreamName, gson.toJson(map));
-                }
+//                }
                 System.out.println("");
                 System.out.println("");
 
